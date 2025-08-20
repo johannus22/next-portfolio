@@ -1,5 +1,6 @@
 "use client";
 
+import { buttonStyles } from "@/lib/tailwind-classes/buttonStyles";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
@@ -56,7 +57,7 @@ export function Navbar() {
                 download
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center space-x-2"
+                className={buttonStyles}
               >
                 <FaGithub />
                 <span>GitHub</span>

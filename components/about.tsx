@@ -11,7 +11,7 @@ export function AboutSection() {
           {/* ...Introduction... */}
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold mb-6">About Me</h2>
-            <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed z-20 text-shadow-2xs">
+            <p className="text-lg sm:text-sm text-gray-300 max-w-3xl mx-auto leading-relaxed z-20 text-shadow-2xs">
               I am Rafael from the Philippines, Graduated from Manuel S. Enverga
               University Foundation Candelaria Inc. I'm a full stack developer
               who loves building modern web applications. I also love creating

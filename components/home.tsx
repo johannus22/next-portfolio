@@ -1,10 +1,10 @@
 import Image from "next/image";
-
 import { Button } from "@/components/ui/button";
 import { GradientText } from "@/components/animate-ui/text/gradient";
 import { Send } from "@/components/animate-ui/icons/send";
 import { Download } from "@/components/animate-ui/icons/download";
 import { AnimateIcon } from "@/components/animate-ui/icons/icon";
+import { buttonStyles } from "@/lib/tailwind-classes/buttonStyles";
 
 export function HomeSection() {
   return (
@@ -28,11 +28,7 @@ export function HomeSection() {
         </span>
       </p>
       <AnimateIcon animateOnHover animateOnTap animation="default">
-        <Button
-          variant="outline"
-          asChild
-          className="hover:scale-95 z-20 mt-6 mr-2 border-gray-700 text-gray-300 hover:bg-gray-800 hover:text-white bg-transparent"
-        >
+        <Button variant="outline" asChild className={buttonStyles}>
           <a
             href="/CV-Masilungan JR.pdf"
             download
@@ -45,12 +41,8 @@ export function HomeSection() {
           </a>
         </Button>
       </AnimateIcon>
-      <AnimateIcon animateOnHover animation="default">
-        <Button
-          variant="outline"
-          asChild
-          className="hover:scale-95 mt-6 border-gray-700 text-gray-300 hover:bg-gray-800 hover:text-white bg-transparent"
-        >
+      <AnimateIcon animateOnHover animateOnTap animation="default">
+        <Button variant="outline" asChild className={buttonStyles}>
           <a
             href="mailto:jmasilungan1822@gmail.com"
             className="flex items-center justify-center space-x-2"

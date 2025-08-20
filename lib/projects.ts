@@ -4,6 +4,7 @@ import { TbApi } from "react-icons/tb";
 import { GrMysql } from "react-icons/gr";
 import { ExternalLink } from "@/components/animate-ui/icons/external-link";
 import { ChevronLeftRight } from "@/components/animate-ui/icons/chevron-left-right";
+import { Star } from "@/components/animate-ui/icons/star";
 import {
   SiBootstrap,
   SiCss3,
@@ -17,6 +18,7 @@ import {
   SiVercel,
   SiVite,
 } from "react-icons/si";
+import { IoDocument } from "react-icons/io5";
 
 export type Technology = {
   name: string;
@@ -174,7 +176,7 @@ export const projects: Project[] = [
       "Led the development of a disaster communication system for the Candelaria DRRMO, enhancing early warning outreach by automating SMS alerts to at-risk households",
       "Built with a locally based SMS API system called 'Semaphore' can send bulk messages with secure role-based access",
     ],
-    status: "Live",
+    status: "Completed",
     image: "/projects/auxilium-doc.jpg",
     technologies: [
       { name: "PHP", icon: SiPhp },
@@ -184,9 +186,9 @@ export const projects: Project[] = [
     ],
     links: [
       {
-        desc: "Repository",
-        icon: ChevronLeftRight,
-        href: "https://github.com/gabrielSantoc/gwa-calculatorrr",
+        desc: "Documents",
+        icon: Star,
+        href: "https://github.com/johannus22/auxilium",
       },
     ],
   },
