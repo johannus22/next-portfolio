@@ -9,7 +9,7 @@ export function HomeSection() {
   return (
     <div className="text-center mx-6">
       <Image
-        className="mx-auto mb-6 rounded-full pointer-events-none border-4 border-purple-600"
+        className="mx-auto mt-10 mb-6 rounded-full pointer-events-none border-4 border-purple-600"
         src="/pfpic.jpg"
         alt=""
         height={98}
@@ -30,7 +30,7 @@ export function HomeSection() {
         <Button
           variant="outline"
           asChild
-          className="z-20 mt-6 mr-2 border-gray-700 text-gray-300 hover:bg-gray-800 hover:text-white bg-transparent"
+          className="hover:scale-95 z-20 mt-6 mr-2 border-gray-700 text-gray-300 hover:bg-gray-800 hover:text-white bg-transparent"
         >
           <a
             href="/CV-Masilungan JR.pdf"
@@ -39,7 +39,7 @@ export function HomeSection() {
             rel="noopener noreferrer"
             className="flex items-center justify-center space-x-2"
           >
-            <Download animateOnHover animateOnTap animation="default" />
+            <Download animateOnHover animateOnTap animation="default-loop" />
             <span>Download CV</span>
           </a>
         </Button>
@@ -48,7 +48,7 @@ export function HomeSection() {
         <Button
           variant="outline"
           asChild
-          className="mt-6 border-gray-700 text-gray-300 hover:bg-gray-800 hover:text-white bg-transparent"
+          className="hover:scale-95 mt-6 border-gray-700 text-gray-300 hover:bg-gray-800 hover:text-white bg-transparent"
         >
           <a
             href="mailto:jmasilungan1822@gmail.com"

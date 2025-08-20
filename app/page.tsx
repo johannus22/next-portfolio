@@ -4,12 +4,9 @@ import { Projects } from "@/components/projects";
 
 export default function Home() {
   return (
-    <main className="container mx-auto px-4 py-8 relative z-10">
+    <main className="container mx-auto px-4 py-8 relative z-10" id="home">
       <div className="space-y-16">
-        <section
-          id="home"
-          className="min-h-[50vh] flex items-center justify-center relative overflow-hidden"
-        >
+        <section className="min-h-[50vh] flex items-center justify-center relative overflow-hidden">
           <div className="relative z-10 w-full flex items-center justify-center">
             <HomeSection />
           </div>
@@ -29,12 +26,12 @@ export default function Home() {
           <Projects />
         </section>
 
-        <section
+        {/* <section
           id="testimonials"
           className="min-h-[50vh] flex items-center justify-center"
         >
           <h2 className="text-3xl font-bold">Testimonials</h2>
-        </section>
+        </section> */}
       </div>
     </main>
   );

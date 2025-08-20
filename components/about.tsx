@@ -120,14 +120,15 @@ export function AboutSection() {
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold mb-6">About Me</h2>
             <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed z-20 text-shadow-2xs">
-              I am Rafael from the Philippines, I'm a passionate full stack
-              developer who loves building modern web applications. I also love
-              creating efficient, scalable solutions that solve real-world
-              problems and deliver exceptional user experiences. Coding was my
-              hobby back in the day when I made minecraft mods using javascipt
-              on a minecraft javascript launcher that translates it into native
-              code. I also aced high grades during our ICT subject in high
-              school, magnifying my interest in coding
+              I am Rafael from the Philippines, Graduated from Manuel S. Enverga
+              University Foundation Candelaria Inc. I'm a full stack developer
+              who loves building modern web applications. I also love creating
+              efficient, scalable solutions that solve real-world problems and
+              deliver exceptional user experiences. Coding was my hobby back in
+              the day when I made minecraft mods using javascipt on a minecraft
+              javascript launcher that translates it into native code. I also
+              aced high grades during our ICT subject in high school, magnifying
+              my interest in coding.
             </p>
           </div>
           <div className="mb-20">
@@ -153,7 +154,7 @@ export function AboutSection() {
                       {skill.technologies.map((tech, techIndex) => (
                         <Badge
                           key={techIndex}
-                          className="border-gray-700 bg-transparent hover:bg-gray-300 hover:border-gray-300 hover:text-gray-800 flex items-center gap-1 text-xs text-gray-100"
+                          className="border-gray-700 bg-gray-700/30 flex items-center gap-1 text-xs text-gray-200"
                         >
                           <tech.icon className="w-4 h-4 mr-1" />
                           {tech.name}

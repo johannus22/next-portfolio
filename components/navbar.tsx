@@ -10,7 +10,7 @@ const navLinks = [
   { name: "Home", href: "#home" },
   { name: "About", href: "#about" },
   { name: "Projects", href: "#projects" },
-  { name: "Testimonials", href: "#testimonials" },
+  // { name: "Testimonials", href: "#testimonials" },
 ];
 
 export function Navbar() {
@@ -49,10 +49,10 @@ export function Navbar() {
             <Button
               variant="outline"
               asChild
-              className="z-20 border-gray-700 text-gray-300 hover:bg-gray-800 hover:text-white bg-transparent"
+              className="z-20 border-gray-700 text-gray-300 hover:bg-gray-800 hover:text-white hover:scale-95 bg-transparent"
             >
               <a
-                href="/CV-Masilungan JR.pdf"
+                href="https://github.com/johannus22"
                 download
                 target="_blank"
                 rel="noopener noreferrer"
