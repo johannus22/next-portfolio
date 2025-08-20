@@ -1,4 +1,5 @@
 import Image from "next/image";
+
 import { Button } from "@/components/ui/button";
 import { GradientText } from "@/components/animate-ui/text/gradient";
 import { Send } from "@/components/animate-ui/icons/send";
@@ -7,7 +8,7 @@ import { AnimateIcon } from "@/components/animate-ui/icons/icon";
 
 export function HomeSection() {
   return (
-    <div className="text-center mx-6">
+    <div className="text-center mx-6" id="smooth-wrapper">
       <Image
         className="mx-auto mt-10 mb-6 rounded-full pointer-events-none border-4 border-purple-600"
         src="/pfpic.jpg"

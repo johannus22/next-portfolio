@@ -29,7 +29,7 @@ export default function RootLayout({
               particleColors={["#ffffff", "#ffffff"]}
               particleCount={1122}
               particleSpread={6}
-              speed={0.1}
+              speed={0.078}
               particleBaseSize={100}
               moveParticlesOnHover={false}
               alphaParticles={false}
