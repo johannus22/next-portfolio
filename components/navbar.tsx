@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import { FaGithub } from "react-icons/fa";
+import { cn } from "@/lib/utils";
 
 const navLinks = [
   { name: "Home", href: "#home" },
@@ -57,7 +58,7 @@ export function Navbar() {
                 download
                 target="_blank"
                 rel="noopener noreferrer"
-                className={buttonStyles}
+                className="flex items-center justify-center space-x-2"
               >
                 <FaGithub />
                 <span>GitHub</span>
