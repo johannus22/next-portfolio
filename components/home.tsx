@@ -22,9 +22,9 @@ export function HomeSection() {
         text="John Rafael Masilungan"
       />
       <p className="text-xl font-normal text-gray-300 pt-3 z-20">
-        I'm a Software{" "}
+        I'm a Web{" "}
         <span className="underline underline-offset-3 decoration-8 decoration-purple-300">
-          Engineer
+          Developer
         </span>
       </p>
       <AnimateIcon animateOnHover animateOnTap animation="default">
