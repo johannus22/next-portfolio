@@ -67,11 +67,6 @@ export function AboutSection() {
               {experiences.map((exp, index) => (
                 <div key={index} className="relative">
                   <div className="flex items-start">
-                    <div className="flex-shrink-0 w-4 h-4 bg-purple-400 rounded-full mt-2 mr-6 relative z-10">
-                      {index < experiences.length - 1 && (
-                        <div className="absolute top-4 left-1/2 transform -translate-x-1/2 w-0.5 h-16 bg-purple-300"></div>
-                      )}
-                    </div>
                     <Card className="flex-1 bg-gray-100 hover:shadow-md transition-shadow duration-300">
                       <CardContent className="p-6">
                         <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
