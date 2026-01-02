@@ -5,40 +5,25 @@ import { experiences } from "@/lib/experiences";
 
 export function AboutSection() {
   return (
-    <section id="about" className="py-20">
-      <div className="container mx-auto px-4">
+    <section id="about" className="py-24">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          {/* ...Introduction... */}
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold mb-6">About Me</h2>
-            <p className="text-lg sm:text-sm text-gray-300 max-w-3xl mx-auto leading-relaxed z-20 text-shadow-2xs">
-              I am Rafael from the Philippines, Graduated from Manuel S. Enverga
-              University Foundation Candelaria Inc. I'm a full stack developer
-              who loves building modern web applications. I also love creating
-              efficient, scalable solutions that solve real-world problems and
-              deliver exceptional user experiences. Coding was my hobby back in
-              the day when I made minecraft mods using javascipt on a minecraft
-              javascript launcher that translates it into native code. I also
-              aced high grades during our ICT subject in high school, magnifying
-              my interest in coding.
-            </p>
-          </div>
           <div className="mb-20">
-            <h3 className="text-2xl font-bold text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-white">
               Technical Skills
-            </h3>
+            </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative">
               {skills.map((skill, index) => (
                 <Card
                   key={index}
-                  className=" border-gray-700 bg-gray-800/95 backdrop-blur supports-[backdrop-filter]:bg-gray-900/60 group hover:shadow-lg transition-all duration-300 hover:scale-105"
+                  className="border-gray-700/50 bg-gray-800/80 backdrop-blur-sm group transition-all duration-300 hover:scale-[1.02] hover:border-purple-500/30"
                 >
                   <CardContent className="p-6">
                     <div className="flex items-center mb-4">
-                      <div className="w-12 h-12 flex items-center justify-center mr-2">
+                      <div className="w-12 h-12 flex items-center justify-center mr-3 rounded-lg bg-purple-500/10 group-hover:bg-purple-500/20 transition-colors">
                         <skill.icon className="w-6 h-6 text-purple-500" />
                       </div>
-                      <h4 className="text-lg font-bold text-white ">
+                      <h4 className="text-base md:text-lg font-semibold text-white">
                         {skill.name}
                       </h4>
                     </div>
@@ -46,10 +31,10 @@ export function AboutSection() {
                       {skill.technologies.map((tech, techIndex) => (
                         <Badge
                           key={techIndex}
-                          className="border-gray-700 bg-gray-700/30 flex items-center gap-1 text-xs text-gray-200"
+                          className="border-gray-600/50 bg-gray-700/40 hover:bg-gray-700/60 flex items-center gap-1.5 text-xs text-gray-200 transition-colors [&>svg]:text-[unset]"
                         >
-                          <tech.icon className="w-4 h-4 mr-1" />
-                          {tech.name}
+                          <tech.icon className="w-3.5 h-3.5 flex-shrink-0" />
+                          <span>{tech.name}</span>
                         </Badge>
                       ))}
                     </div>
@@ -58,39 +43,53 @@ export function AboutSection() {
               ))}
             </div>
           </div>
-          {/* Experience Timeline */}
           <div className="mb-10">
-            <h3 className="text-2xl font-bold text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-white">
               Professional Experience
-            </h3>
-            <div className="space-y-8">
-              {experiences.map((exp, index) => (
-                <div key={index} className="relative">
-                  <div className="flex items-start">
-                    <Card className="flex-1 bg-gray-100 hover:shadow-md transition-shadow duration-300">
-                      <CardContent className="p-6">
-                        <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
-                          <h4 className="text-xl font-bold">{exp.title}</h4>
-                          <Badge
-                            variant="outline"
-                            className="w-fit mt-2 md:mt-0 bg-purple-500 text-gray-200"
-                          >
+            </h2>
+            <div className="relative max-w-4xl mx-auto">
+              {/* Timeline Line */}
+              <div className="absolute left-0 md:left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-500 to-transparent"></div>
+
+              <div className="space-y-8">
+                {experiences.map((exp, index) => (
+                  <div key={index} className="relative pl-8 md:pl-20">
+                    {/* Timeline Dot */}
+                    <div className="absolute left-[-6px] md:left-[26px] top-2 w-3 h-3 bg-purple-500 rounded-full ring-4 ring-gray-800"></div>
+
+                    <Card className="border-gray-700/50 bg-gray-800/80 backdrop-blur-sm hover:shadow-xl hover:shadow-purple-500/10 transition-all duration-300 hover:border-purple-500/30">
+                      <CardContent className="p-6 md:p-8">
+                        <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4 gap-3">
+                          <div className="flex-1">
+                            <h3 className="text-lg md:text-xl font-bold text-white mb-1">
+                              {exp.title}
+                            </h3>
+                            <p className="text-purple-400 font-medium text-sm md:text-base">
+                              {exp.company}
+                            </p>
+                          </div>
+                          <Badge className="w-fit bg-purple-500/20 text-purple-300 border-purple-500/30 px-3 py-1.5 text-sm font-medium">
                             {exp.period}
                           </Badge>
                         </div>
-                        <p className="text-primary font-medium mb-3">
-                          {exp.company}
-                        </p>
-                        <ul className="text-sm list-disc list-inside text-gray-600 leading-relaxed space-y-2">
+                        <ul className="space-y-3 mt-4">
                           {exp.description.map((item, i) => (
-                            <li key={i}>{item}</li>
+                            <li
+                              key={i}
+                              className="text-gray-300 text-sm md:text-base leading-relaxed flex items-start gap-3"
+                            >
+                              <span className="text-purple-400 mt-1 flex-shrink-0">
+                                ▹
+                              </span>
+                              <span className="flex-1">{item}</span>
+                            </li>
                           ))}
                         </ul>
                       </CardContent>
                     </Card>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </div>

@@ -9,21 +9,22 @@ export const experiences: Experience[] = [
   {
     title: "Junior Software Engineer",
     company: "Kodecraft Technologies",
-    period: "11/2025 - Present",
+    period: "Nov 2025 - Present",
     description: [
-      "Currently Working Here"
+      "Developing and maintaining scalable web applications using modern full-stack technologies",
+      "Collaborating with cross-functional teams to deliver high-quality software solutions",
+      "Implementing best practices in code quality, testing, and documentation",
     ],
   },
   {
-    title: "Freelance Developer",
+    title: "Freelance Full-Stack Developer",
     company: "Self Employed",
-    period: "03/2025 - 06/2025",
+    period: "Feb 2025 - Jun 2025",
     description: [
-      "Collaborated with an international client (e.g., QFC Real Estate, San Diego) to build scalable, client-specific web applications using modern frameworks like React and Next.js.",
-      "Built and deployed 4+ full-stack applications, including tools for real-time collaboration (SyncPaste).",
-      "Commissioned by STEM and ICT Students in their capstone theses e.g arduino code and building, website design and development.",
-      "Maintained clean, readable codebases and documentation to support handover and future maintenance.",
+      "Delivered 4+ production-ready web applications for international clients, including a custom real estate marketing platform for QFC Real Estate (San Diego)",
+      "Built SyncPaste, a real-time cross-platform clipboard synchronization tool reaching 300+ active users within two weeks of launch",
+      "Developed custom solutions for academic clients, including Arduino-based IoT systems and responsive web applications for capstone projects",
+      "Maintained 100% client satisfaction through clean code practices, comprehensive documentation, and timely project delivery",
     ],
   },
-  
 ];

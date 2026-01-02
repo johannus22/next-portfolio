@@ -16,16 +16,22 @@ export function HomeSection() {
         height={98}
         width={98}
       />
-      <h1 className="text-lg font-semibold text-gray-300">Hello! I am</h1>
+      <h1 className="text-lg md:text-xl font-semibold text-gray-300 mb-2">
+        Hello! I am
+      </h1>
       <GradientText
-        className="mb-4 text-5xl font-extrabold text-transparent bg-clip-text"
+        className="mb-4 text-4xl md:text-5xl lg:text-6xl font-extrabold text-transparent bg-clip-text"
         text="John Rafael Masilungan"
       />
-      <p className="text-xl font-normal text-gray-300 pt-3 z-20">
-        I'm a {" "}
-        <span className="underline underline-offset-3 decoration-8 decoration-purple-300">
-          Software Engineer
+      <p className="text-xl md:text-2xl font-normal text-gray-300 pt-3 z-20">
+        I'm a{" "}
+        <span className="underline underline-offset-3 decoration-8 decoration-purple-400">
+          Full-Stack Developer
         </span>
+      </p>
+      <p className="text-sm md:text-base font-normal text-gray-300 pt-3 mt-5 z-20">
+        with currently a year of experience in the field of software
+        development.
       </p>
       <AnimateIcon animateOnHover animateOnTap animation="default">
         <Button variant="outline" asChild className={buttonStyles}>

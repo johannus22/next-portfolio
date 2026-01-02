@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "@/components/navbar";
-import Particles from "@/components/bg/particles";
-import { Footer } from "@/components/footer";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -11,7 +8,7 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Johannus.dev",
+  title: "Johannus",
   description: "Portfolio website of John Rafael Masilungan (Johannus)",
 };
 
@@ -24,22 +21,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${montserrat.variable} font-sans antialiased`}>
         <div className="min-h-screen bg-gray-900 text-white relative">
-          <div className="absolute inset-0 z-0 pointer-events-none w-full h-full">
-            <Particles
-              particleColors={["#ffffff", "#ffffff"]}
-              particleCount={1122}
-              particleSpread={6}
-              speed={0.078}
-              particleBaseSize={100}
-              moveParticlesOnHover={false}
-              alphaParticles={false}
-              disableRotation={false}
-            />
-          </div>
-          <Navbar />
+          <div className="absolute inset-0 z-0 pointer-events-none w-full h-full"></div>
           {children}
         </div>
-        <Footer />
       </body>
     </html>
   );
