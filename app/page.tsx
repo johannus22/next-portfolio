@@ -84,6 +84,89 @@ export default function Home() {
     },
   ];
 
+  // Page load animation variants
+  const pageContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  // Different slide directions for visual interest
+  const slideFromTop = {
+    hidden: { opacity: 0, y: -50, scale: 0.95 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        type: "spring" as const,
+        stiffness: 100,
+        damping: 15,
+      },
+    },
+  };
+
+  const slideFromLeft = {
+    hidden: { opacity: 0, x: -80, scale: 0.9 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      scale: 1,
+      transition: {
+        type: "spring" as const,
+        stiffness: 100,
+        damping: 15,
+      },
+    },
+  };
+
+  const slideFromRight = {
+    hidden: { opacity: 0, x: 80, scale: 0.9 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      scale: 1,
+      transition: {
+        type: "spring" as const,
+        stiffness: 100,
+        damping: 15,
+      },
+    },
+  };
+
+  const slideFromBottom = {
+    hidden: { opacity: 0, y: 50, scale: 0.95 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        type: "spring" as const,
+        stiffness: 100,
+        damping: 15,
+      },
+    },
+  };
+
+  const fadeInScale = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        type: "spring" as const,
+        stiffness: 100,
+        damping: 15,
+      },
+    },
+  };
+
+  // Scroll animation variants (for when scrolling)
   const cardVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
@@ -122,17 +205,16 @@ export default function Home() {
   };
 
   return (
-    <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 relative z-10">
+    <motion.main
+      initial="hidden"
+      animate="visible"
+      variants={pageContainer}
+      className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 relative z-10"
+    >
       {/* Bento Grid Layout */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6 max-w-7xl mx-auto">
         {/* Hero Card - Spans full width */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={cardVariants}
-          className="md:col-span-4"
-        >
+        <motion.div variants={slideFromTop} className="md:col-span-4">
           <Card className="border-gray-700/50 bg-gray-800/80 backdrop-blur-sm hover:border-cyan-400/30 transition-all overflow-hidden group">
             <CardContent className="p-6 md:p-8">
               <div className="flex flex-col md:flex-row items-center gap-6 md:gap-8">
@@ -240,10 +322,7 @@ export default function Home() {
 
         {/* Experience Card - Spans 2 columns, 2 rows */}
         <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={cardVariants}
+          variants={slideFromLeft}
           className="md:col-span-2 md:row-span-2"
         >
           <Card className="border-gray-700/50 bg-gray-800/80 backdrop-blur-sm hover:border-cyan-400/30 transition-all h-full overflow-hidden">
@@ -293,11 +372,15 @@ export default function Home() {
         {techCategories.map((category, index) => (
           <motion.div
             key={index}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={cardVariants}
-            transition={{ delay: index * 0.1 }}
+            variants={
+              index === 0
+                ? slideFromRight
+                : index === 1
+                ? slideFromRight
+                : index === 2
+                ? slideFromRight
+                : slideFromRight
+            }
             className="md:col-span-2"
           >
             <Card className="border-gray-700/50 bg-gray-800/80 backdrop-blur-sm hover:border-cyan-400/30 transition-all h-full group">
@@ -344,13 +427,7 @@ export default function Home() {
         ))}
 
         {/* Featured Projects - Spans all columns */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={cardVariants}
-          className="md:col-span-4"
-        >
+        <motion.div variants={slideFromBottom} className="md:col-span-4">
           <Card className="border-gray-700/50 bg-gray-800/80 backdrop-blur-sm hover:border-cyan-400/30 transition-all">
             <CardContent className="p-6 md:p-8">
               <h2 className="text-2xl md:text-3xl text-center font-bold text-white mb-8">
@@ -437,13 +514,7 @@ export default function Home() {
         </motion.div>
 
         {/* Beyond Coding & Certificates - 2 Cards */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={cardVariants}
-          className="md:col-span-2"
-        >
+        <motion.div variants={slideFromRight} className="md:col-span-2">
           <Card className="border-gray-700/50 bg-gray-800/80 backdrop-blur-sm hover:border-cyan-400/30 transition-all h-full group">
             <CardContent className="p-6">
               <h2 className="text-xl md:text-2xl font-bold text-white mb-6 flex items-center gap-2">
@@ -511,13 +582,7 @@ export default function Home() {
         </motion.div>
 
         {/* Certificates Card */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={cardVariants}
-          className="md:col-span-2"
-        >
+        <motion.div variants={slideFromRight} className="md:col-span-2">
           <Card className="border-gray-700/50 bg-gray-800/80 backdrop-blur-sm hover:border-cyan-400/30 transition-all h-full group">
             <CardContent className="p-6">
               <h2 className="text-xl md:text-2xl font-bold text-white mb-6 flex items-center gap-2">
@@ -600,13 +665,7 @@ export default function Home() {
         </motion.div>
 
         {/* Footer - Spans all columns */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={cardVariants}
-          className="md:col-span-4"
-        >
+        <motion.div variants={fadeInScale} className="md:col-span-4">
           <Card className="border-gray-700/50 bg-gray-800/80 backdrop-blur-sm hover:border-cyan-400/30 transition-all">
             <CardContent className="p-6">
               <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
@@ -649,6 +708,6 @@ export default function Home() {
           </Card>
         </motion.div>
       </div>
-    </main>
+    </motion.main>
   );
 }
